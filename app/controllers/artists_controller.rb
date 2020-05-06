@@ -4,7 +4,7 @@ class ArtistsController < ApplicationController
         artist = Artist.find_by(spotify_id: params[:artist][:spotify_id])
         if artist
             userartist = UserArtist.find_by(user_id: params[:user][:id], artist_id: artist.id)
-            if userartist == null
+            if userartist == nil
                 UserArtist.create(user_id: params[:user][:id], artist_id: artist.id)
             end
         else

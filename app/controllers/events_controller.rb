@@ -4,7 +4,7 @@ class EventsController < ApplicationController
         event = Event.find_by(ticketmaster_id: params[:event][:ticketmaster_id])
         if event
             userevent = UserEvent.find_by(user_id: params[:user][:id], event_id: event.id)
-            if userevent == null
+            if userevent == nil
                 UserEvent.create(user_id: params[:user][:id], event_id: event.id)
             end
         else
